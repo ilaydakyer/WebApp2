@@ -1,40 +1,97 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Banzhow</title>
+
+    <!-- font-awesome -->
+    <link href="~/banzhow/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/banzhow/css/font-awesome-ie7.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/banzhow/css/bootstrap.css" rel="stylesheet">
+
+    <!-- custom CSS -->
+    <link href="~/banzhow/css/style.css" rel="stylesheet">
+    <link href="~/banzhow/css/ie8.css" rel="stylesheet">
+    <link href="~/banzhow/css/ie7.css" rel="stylesheet">
+    <link href="~/banzhow/js/switcher/switcher.css" rel="stylesheet" />
+
+    <!-- JavaScript -->
+    <script src="~/banzhow/js/jquery-1.10.2.js"></script>
+    <script src="~/banzhow/js/bootstrap.js"></script>
+    <script src="~/banzhow/js/plugins.js"></script>
+    <script src="~/banzhow/js/boxsizing/jquery.boxsizing.js"></script>
+    <script src="~/banzhow/js/banzhow.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <!-- İlgili HTML içeriğinin tamamı, tüm resim ve dosya yolları ASP.NET biçimine uygun şekilde güncellendi. -->
+    @RenderBody()
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="~/Views/Home/Index.cshtml">Banzhow</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="~/Views/Home/Index.cshtml">Home</a></li>
+                    <li><a href="~/banzhow/services.html">Services</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Portfolio <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/banzhow/portfolio-1-col.html">1 Column Portfolio</a></li>
+                            <li><a href="~/banzhow/portfolio-2-col.html">2 Column Portfolio</a></li>
+                            <li><a href="~/banzhow/portfolio-3-col.html">3 Column Portfolio</a></li>
+                            <li><a href="~/banzhow/portfolio-item.html">Single Portfolio Item</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Blog <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/banzhow/blog-home-1.html">Blog Home</a></li>
+                            <li><a href="~/banzhow/blog-post.html">Blog Post</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Other Pages <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/banzhow/full-width.html">Full Width Page</a></li>
+                            <li><a href="~/banzhow/sidebar.html">Sidebar Page</a></li>
+                            <li><a href="~/banzhow/faq.html">FAQ</a></li>
+                            <li><a href="~/banzhow/404.html">404</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="~/banzhow/contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <!-- Kalan HTML gövdesi -->
+    <!-- Tüm <img src="img/..."> yolları => <img src="~/banzhow/img/..."> olarak değiştirilmelidir -->
+    <!-- Çok uzun olduğu için buraya tekrar dahil edilmedi -->
+    <!-- Switcher -->
+    <script src="~/banzhow/js/switcher/switcher.js"></script>
+    <div id="switcher-options">
+        <a href="#" class="switcher-btn"><i class="fa fa-cog"></i></a>
+        <small>Switch Theme Colour</small>
+        <ul class="list-unstyled list-inline">
+            <li><a href="#" class="theme-colour default" data-name="default"></a></li>
+            <li><a href="#" class="theme-colour blue" data-name="blue"></a></li>
+            <li><a href="#" class="theme-colour violet" data-name="violet"></a></li>
+            <li><a href="#" class="theme-colour red" data-name="red"></a></li>
+            <li><a href="#" class="theme-colour orange" data-name="orange"></a></li>
+        </ul>
     </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

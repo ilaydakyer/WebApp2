@@ -21,5 +21,9 @@ namespace WebApplication2.Controllers
         {
             return View();
         }
+        public ActionResult Faq()
+        {
+            return View();
+        }
     }
 }
